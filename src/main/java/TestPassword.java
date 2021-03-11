@@ -27,9 +27,10 @@ public class TestPassword {
 
         for (int i = 0; i < pass.length ; i++) {
 
-            if (pass[i] < 47 && pass[i] >58){
-
+            if ((pass[i] > 47 && pass[i] <58)&&(pass[i+1] > 47 && pass[i+1] <58)
+                    &&(pass[i] == pass[i+2] )){
                 continue;
+
             }
             /*
             if (pass[i+1]>=46 && pass[i+1] <=57 &&(i+1<pass.length-1)){
@@ -38,10 +39,7 @@ public class TestPassword {
                     test = true;
                 }
             }*/
-
-
         }
-
         return  test;
     }
 
