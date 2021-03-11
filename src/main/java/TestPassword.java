@@ -1,11 +1,10 @@
 public class TestPassword {
 
-
     public boolean checkPassword(String text){ //Grundgerüst
 
         boolean test;
         if((text.length() >= 8 && text.length() <=25)&&(text.matches("[a-zA-Z]*"))&&
-                (text.matches("[0-9]*"))&&(text.matches("[()#$?!%/@]"))){
+                (text.matches("[0-9]*"))&&(text.matches("[()#$?!%/@]*"))){
 
             test = true;
         }
@@ -17,7 +16,6 @@ public class TestPassword {
         if (extendValues(text)==false){
             System.out.println("Test Falsch");
         }
-
         return test;
     }
     public boolean extendValues(String text){ //ERweiterung
@@ -29,8 +27,12 @@ public class TestPassword {
 
             if ((pass[i] > 47 && pass[i] <58)&&(pass[i+1] > 47 && pass[i+1] <58)
                     &&(pass[i] == pass[i+2] )){
-                continue;
+                test = true;
 
+            }
+            else
+            {
+                test = false;
             }
             /*
             if (pass[i+1]>=46 && pass[i+1] <=57 &&(i+1<pass.length-1)){
@@ -42,7 +44,4 @@ public class TestPassword {
         }
         return  test;
     }
-
-
-
 }

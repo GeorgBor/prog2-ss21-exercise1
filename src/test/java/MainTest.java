@@ -32,9 +32,21 @@ public class MainTest {
 
     }*/
     @Test
-    void checkPasswordLength(){
+    void checkPasswordCorrect(){
+        TestPassword testPassword = new TestPassword();
+        Assertions.assertTrue(testPassword.checkPassword("HelloWorld136!"));
+
+    }
+
+    @Test
+    void checkPasswordLength8(){
         TestPassword testPassword = new TestPassword();
         Assertions.assertFalse(testPassword.checkPassword("Helloworld"));
+    }
+    @Test
+    void checkPasswordLength25(){
+        TestPassword testPassword = new TestPassword();
+        Assertions.assertFalse(testPassword.checkPassword("HelloworldHelloworldHelloworld"));
     }
 
 
