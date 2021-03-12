@@ -3,6 +3,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class MainTest {
 
     @BeforeAll
@@ -13,12 +15,12 @@ public class MainTest {
     void setUp() {
     }
 
-/*
+
     @Test
     void validPasswordless8Sign() {
         TestPassword checkPWD = new TestPassword();
         boolean actual = checkPWD.checkPassword("Hellowo");
-        boolean expected = true;
+        boolean expected = false;
         assertEquals(expected, actual);
     }
 
@@ -26,11 +28,18 @@ public class MainTest {
     void validPasswordMoreThan25Signs() {
         TestPassword checkPWD = new TestPassword();
         boolean actual = checkPWD.checkPassword("Helloworld12!Helloworld12!Helloworld12!");
-        boolean expected = true;
+        boolean expected = false;
         assertEquals(expected, actual);
 
-
-    }*/
+    }
+    @Test
+    void validCorrectPassword(){
+        TestPassword checkPWD = new TestPassword();
+        boolean actual = checkPWD.checkPassword("HelloWorld");
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
+    /*
     @Test
     void checkPasswordCorrect(){
         TestPassword testPassword = new TestPassword();
@@ -47,7 +56,7 @@ public class MainTest {
     void checkPasswordLength25(){
         TestPassword testPassword = new TestPassword();
         Assertions.assertFalse(testPassword.checkPassword("HelloworldHelloworldHelloworld"));
-    }
+    }*/
 
 
 
