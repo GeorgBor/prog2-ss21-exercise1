@@ -35,7 +35,7 @@ public class MainTest {
     @Test
     void validCorrectPassword(){
         TestPassword checkPWD = new TestPassword();
-        boolean actual = checkPWD.checkPassword("HelloWorld");
+        boolean actual = checkPWD.checkPassword("HelloWorld1357");
         boolean expected = true;
         assertEquals(expected, actual);
     }
