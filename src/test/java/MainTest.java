@@ -32,32 +32,32 @@ public class MainTest {
         assertEquals(expected, actual);
 
     }
+
+    @Test
+    void validPasswordWithLowerCase(){
+        TestPassword checkPWD = new TestPassword();
+        boolean actual = checkPWD.checkPassword("helloworld1357!");
+        boolean expected = false;
+        assertEquals(expected,actual);
+    }
+    @Test
+    void validPasswordWithUpperCase(){
+        TestPassword checkPWD = new TestPassword();
+        boolean actual = checkPWD.checkPassword("HELLOWORLD1357!");
+        boolean expected = false;
+        assertEquals(expected,actual);
+    }
+
+
+
+
     @Test
     void validCorrectPassword(){
         TestPassword checkPWD = new TestPassword();
-        boolean actual = checkPWD.checkPassword("HelloWorld1234@!?#");
+        boolean actual = checkPWD.checkPassword("HelloWorld135@!?#");
         boolean expected = true;
         assertEquals(expected, actual);
     }
-    /*
-    @Test
-    void checkPasswordCorrect(){
-        TestPassword testPassword = new TestPassword();
-        Assertions.assertTrue(testPassword.checkPassword("HelloWorld136!"));
-
-    }
-
-    @Test
-    void checkPasswordLength8(){
-        TestPassword testPassword = new TestPassword();
-        Assertions.assertFalse(testPassword.checkPassword("Helloworld"));
-    }
-    @Test
-    void checkPasswordLength25(){
-        TestPassword testPassword = new TestPassword();
-        Assertions.assertFalse(testPassword.checkPassword("HelloworldHelloworldHelloworld"));
-    }*/
-
 
 
 }
