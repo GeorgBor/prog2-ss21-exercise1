@@ -3,13 +3,16 @@ public class TestPassword {
     public boolean checkPassword(String text){ //Grundgerüst
 
         boolean test = false;
-        char[] chars=text.toCharArray();
+        //char[] chars=text.toCharArray();
 
-        if((text.length() >= 8 && text.length() <=25)
-                //&&(text.matches("[a-zA-Z]*"))
+
+        if((text.length() >= 8 && text.length() <=25) //Basis
+                &&(text.matches("[a-zA-Z0-9()#$?!%/@]*"))
                 //&&(text.matches("[0-9]*"))
-                || (text.matches("[()#$?!%/@]"))
+                //|| (text.matches("[()#$?!%/@]"))
         ){
+            test = true;
+            /*
             for (int i = 0; i < chars.length ; i++) {
 
                 if (
@@ -20,7 +23,7 @@ public class TestPassword {
 
                 }
 
-            }
+            }*/
 
         }
         else
