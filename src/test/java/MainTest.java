@@ -32,6 +32,13 @@ public class MainTest {
         assertEquals(expected, actual);
 
     }
+    @Test
+    void validCorrectPassword(){
+        TestPassword checkPWD = new TestPassword();
+        boolean actual = checkPWD.checkPassword("HelloWorld135@!?#");
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
 
     @Test
     void validPasswordWithLowerCase(){
@@ -51,13 +58,8 @@ public class MainTest {
 
 
 
-    @Test
-    void validCorrectPassword(){
-        TestPassword checkPWD = new TestPassword();
-        boolean actual = checkPWD.checkPassword("HelloWorld135@!?#");
-        boolean expected = true;
-        assertEquals(expected, actual);
-    }
+
+
 
 
 }
