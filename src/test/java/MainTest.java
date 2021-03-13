@@ -54,6 +54,34 @@ public class MainTest {
         boolean expected = false;
         assertEquals(expected,actual);
     }
+    @Test
+    void validPasswordWithDigits(){
+        TestPassword checkPWD = new TestPassword();
+        boolean actual = checkPWD.checkPassword("HelloWorld");
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void validPasswordWithDigits2(){
+        TestPassword checkPWD = new TestPassword();
+        boolean actual = checkPWD.checkPassword("1234567890");
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void validPasswordWithSpecialCharacters(){
+        TestPassword checkPWD = new TestPassword();
+        boolean actual = checkPWD.checkPassword("Helloworld12345-7");
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void validPasswordWithSpecialCharacters2(){
+        TestPassword checkPWD = new TestPassword();
+        boolean actual = checkPWD.checkPassword("Helloworld12345,7");
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
 
 
 
